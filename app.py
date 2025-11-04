@@ -25,9 +25,9 @@ import dash_bootstrap_components as dbc
 # ****************************************************************************
 # Lectura de las bases que contienen la información relevante a las muertes
 # por departamento en el año 2019
-mortalidad = pd.read_excel('datos\\Anexo1.NoFetal2019_CE_15-03-23.xlsx')
-codigos = pd.read_excel('datos\\Anexo2.CodigosDeMuerte_CE_15-03-23.xlsx')
-municipios = pd.read_excel('datos\\Divipola_CE_.xlsx')
+mortalidad = pd.read_excel('datos/Anexo1.NoFetal2019_CE_15-03-23.xlsx')
+codigos = pd.read_excel('datos/Anexo2.CodigosDeMuerte_CE_15-03-23.xlsx')
+municipios = pd.read_excel('datos/Divipola_CE_.xlsx')
 
 # Adecúa el código del departamento y municipio para poder hacer un join con la información
 # del mapa
@@ -97,7 +97,7 @@ dep_muertes = (
 )
 
 # Importa el shape de departamentos de Colombia
-dep_col = gpd.read_file('datos\\shapes\\departamento\\MGN_DPTO_POLITICO.shp')
+dep_col = gpd.read_file('datos/shapes/departamento/MGN_DPTO_POLITICO.shp')
 # Asegurarse que el código del shape sea string y zfill(2)
 dep_col['DPTO_CCDGO'] = dep_col['DPTO_CCDGO'].astype(str).str.zfill(2)
 
